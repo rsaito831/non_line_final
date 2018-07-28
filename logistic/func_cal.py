@@ -1,5 +1,5 @@
 import numpy as np
-#import math
+import sys
 
 
 def func1(x):
@@ -7,7 +7,7 @@ def func1(x):
 
 
 def func2(x):
-    a = 3.7
+    a = float(sys.argv[1])
     return a * x * (1 - x)
 
 

@@ -6,6 +6,8 @@ def logsitic(a):
     n = 2000
     x = [0.45]
     lyapunov_ex = 0
+    a = round(a, 3)
+
     f3 = open("attractor.csv", "a")
 
     for i in range(n):
@@ -13,8 +15,8 @@ def logsitic(a):
 
         dfx = a * (1 - 2 * x[-1])
         lyapunov_ex += math.log(abs(dfx))
-        if 0.5000 < a < 0.5003:
 
+        if i > (n - 201):
             f3.write(str(a) + " " + str(x[-2]) + " " + str(x[-1]) + "\n")
             f3.write(str(a) + " " + str(x[-1]) + " " + str(x[-1]) + "\n")
     f3.close()
