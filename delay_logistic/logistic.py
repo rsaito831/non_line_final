@@ -6,6 +6,8 @@ def logsitic(b):
     n = 2000
     x = [0.6, 0.45]
 
+    b = round(b, 3)
+
     e_0 = np.array([[-1 / math.sqrt(2)], [1 / math.sqrt(2)]])
     f_0 = np.array([[1 / math.sqrt(2)], [1 / math.sqrt(2)]])
 
@@ -19,8 +21,8 @@ def logsitic(b):
         cnt += 1
         x.append(b * x[-1] * (1 - x[-2]))
 
-        if 2.05 < b < 2.052:
-            f4.write(str(x[-3]) + " " + str(x[-2]) + "\n")
+        if i > (n - 201):
+            f4.write(str(b) + " " + str(x[-3]) + " " + str(x[-2]) + "\n")
 
         DF = np.array([[0, 1], [-b * x[-1], b * (1 - x[-2])]])
 
